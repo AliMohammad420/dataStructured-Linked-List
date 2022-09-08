@@ -30,13 +30,9 @@ class LinkedList {
     }
     delete(value) {
         if(!this.head) {
-            return null;
+            this.head = node;
         }
-        if(this.head.value == value) {
-            this.head = this.head.next;
-            return;
-        }
-        let current = this.head;
+        const current = this.head;
         while(current.next) {
             if(current.next.value == value) {
                 current.next = current.next.next;
