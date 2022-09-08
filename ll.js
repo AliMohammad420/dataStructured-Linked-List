@@ -28,7 +28,23 @@ class LinkedList {
            currentNode.next = node;
         }
     }
-   
+    delete(value) {
+        if(!this.head) {
+            return null;
+        }
+        if(this.head.value == value) {
+            this.head = this.head.next;
+            return;
+        }
+        let current = this.head;
+        while(current.next) {
+            if(current.next.value == value) {
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+        }
+    }
 }
 
 module.exports = LinkedList;

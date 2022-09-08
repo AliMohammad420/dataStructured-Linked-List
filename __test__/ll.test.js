@@ -48,3 +48,16 @@ describe("Append to the end", () =>{
             expect(ll.head.next.next.next).toBeNull();
         })
 })
+
+describe("Deleting Test", () =>{
+    it("Testing deleting linked list", () => {
+        const ll = new LinkedList();
+        ll.append('a');
+        ll.append('b');
+        ll.append('c');
+        ll.delete('b');
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('c');
+        expect(ll.head.next.next).toBeNull();
+    })
+})
