@@ -61,3 +61,37 @@ describe("Deleting Test", () =>{
         expect(ll.head.next.next).toBeNull();
     })
 })
+
+describe('Insert specific value', () => {
+
+    test('Insert an empty linked list', () => {
+        const ll = new LinkedList();
+        expect(ll.insertSpecific('a', 'b')).toEqual('Is Empty!');
+    })
+
+    test('Insert specific value', () => {
+        const ll = new LinkedList();
+        ll.append('a');
+        ll.append('b');
+        ll.append('c');
+        ll.append('d');
+        ll.append('e');
+
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('c');
+        expect(ll.head.next.next.next.value).toEqual('d');
+        expect(ll.head.next.next.next.next.value).toEqual('e');
+        expect(ll.head.next.next.next.next.next).toBeNull();
+
+        ll.insertSpecific('c', 'l');
+
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('l');
+        expect(ll.head.next.next.next.value).toEqual('c');
+        expect(ll.head.next.next.next.next.value).toEqual('d');
+        expect(ll.head.next.next.next.next.next.value).toEqual('e');
+        expect(ll.head.next.next.next.next.next.next).toBeNull();
+    })
+})

@@ -41,6 +41,22 @@ class LinkedList {
             current = current.next;
         }
     }
+    insertSpecific(val, newVal) {
+        const node = new Node(newVal);
+        if(!this.head) {
+            return 'Is Empty!';
+        } else { 
+            let current = this.head;
+            let previous = this.head;
+            while (current.value !== val) {
+                previous = current;
+                current = current.next;
+            }
+            previous.next = node;
+            node.next = current;
+        }
+    }
+
 }
 
 module.exports = LinkedList;
